@@ -1,14 +1,15 @@
-import React from 'react'
+import React from "react";
 import { Outlet } from "react-router-dom";
+import MainNav from "../components/MainNav";
 const Layout = () => {
   return (
-    <>
-    <h1>MainLayout</h1>
-    <hr />
+    <div>
+      <main>
+        <MainNav />
+        <Outlet />
+      </main>
+    </div>
+  );
+};
 
-    <Outlet />
-    </>
-  )
-}
-
-export default Layout
+export default Layout;
