@@ -21,7 +21,7 @@ const ecomStore = (set) => ({
 // นำข้อมูลเข้า storage 
 const usePersist = {
   name: 'ecom-store',
-  Storage: createJSONStorage(()=>localStorage)
+  storage: createJSONStorage(()=>localStorage)
 }
 const useEcomStore = create(persist(ecomStore,usePersist))
 

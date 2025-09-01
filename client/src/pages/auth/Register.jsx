@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 
-const Register =  () => {
+const Register = () => {
   // Code JS
   const [form, setForm] = useState({
     email: "",
@@ -21,22 +21,21 @@ const Register =  () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(form.password !== form.confirmPassword){
-      return alert('Password is not match')
+    if (form.password !== form.confirmPassword) {
+      return alert("Password is not match");
     }
     // console.log(form);
 
     // Sent to back
-    try{
-      const res = await axios.post('http://localhost:5001/api/register',form)
+    try {
+      const res = await axios.post("http://localhost:5001/api/register", form);
       // console.log(res)
-      toast.success(res.data)
-    }catch(err){
+      toast.success(res.data);
+    } catch (err) {
       // console.log(err)
-      const errMsg = err.response?.data?.message
-      toast.error(errMsg)
+      const errMsg = err.response?.data?.message;
+      toast.error(errMsg);
     }
-    
   };
   return (
     <div>
