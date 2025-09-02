@@ -4,8 +4,9 @@ import MainNav from "../components/MainNav";
 const Layout = () => {
   return (
     <div>
+      <MainNav />
       <main>
-        <MainNav />
+        {/* main content */}
         <Outlet />
       </main>
     </div>

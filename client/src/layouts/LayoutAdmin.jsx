@@ -1,13 +1,19 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import SidebarAdmin from "../components/admin/SidebarAdmin";
+import HeaderAmin from "../components/admin/HeaderAmin";
 
 const LayoutAdmin = () => {
   return (
-    <>
-      <h1>MainAmin</h1>
-      <hr />
-      <Outlet />
-    </>
+    <div className="flex h-screen ">
+      <SidebarAdmin />
+      <div className="flex-1 flex flex-col">
+        <HeaderAmin />
+        <main className="flex-1 p-6 bg-gray-100 overflow-y-auto">
+          <Outlet />
+        </main>
+      </div>
+    </div>
   );
 };
 
